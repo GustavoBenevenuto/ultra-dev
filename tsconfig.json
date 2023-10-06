@@ -8,8 +8,11 @@
         "outDir": "./dist",
         "baseUrl": "./src",
         "paths": {
-            "ultra-dev/*": [
-                "*"
+            "ultra-dev/general/*": [
+                "src/general/"
+            ],
+            "ultra-dev/pt-br/*": [
+                "src/pt-br/*"
             ],
         },
         "removeComments": true,
