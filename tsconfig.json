@@ -6,15 +6,6 @@
         "module": "commonjs",
         // "rootDir": "./src",
         "outDir": "./dist",
-        "baseUrl": "./dist",
-        "paths": {
-            "ultra-dev/general/*": [
-                "dist/general/"
-            ],
-            "ultra-dev/pt-br/*": [
-                "dist/pt-br/*"
-            ],
-        },
         "removeComments": true,
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
@@ -22,6 +13,9 @@
         "resolveJsonModule": true,
         "skipLibCheck": true
     },
+    "include": [
+        "src/**/*"
+    ],
     "exclude": [
         "node_modules",
         "**/*.test.ts"

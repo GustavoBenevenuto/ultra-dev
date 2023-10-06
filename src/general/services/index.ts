@@ -1,0 +1,1 @@
+export { PalindromeService } from './PalindromeService';
