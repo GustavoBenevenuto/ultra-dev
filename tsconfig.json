@@ -6,6 +6,12 @@
         "module": "commonjs",
         "rootDir": "./src",
         "outDir": "./dist",
+        "baseUrl": "./src",
+        "paths": {
+            "ultra-dev/*": [
+                "*"
+            ],
+        },
         "removeComments": true,
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
