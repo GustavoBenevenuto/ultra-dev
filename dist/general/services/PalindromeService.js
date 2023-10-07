@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PalindromeService = void 0;
 class PalindromeService {
-    static toGenerate(withMask = false) {
+    static toGenerate() {
         const alphabet = "abcdefghijklmnopqrstuvwxyz";
         const size = Math.floor(Math.random() * 10) + 5;
         let palindrome = "";

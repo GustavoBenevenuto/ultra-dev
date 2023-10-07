@@ -1,5 +1,5 @@
 export class PalindromeService {
-    static toGenerate(withMask: boolean = false): string | Promise<string> {
+    static toGenerate(): string | Promise<string> {
         const alphabet = "abcdefghijklmnopqrstuvwxyz";
         const size = Math.floor(Math.random() * 10) + 5;
         let palindrome = "";

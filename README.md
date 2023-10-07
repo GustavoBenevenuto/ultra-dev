@@ -1,62 +1,97 @@
 
-
 <h1 align="center">
-    <a href="https://www.npmjs.com/package/ultra-dev/">🔗 ultra-dev</a>
+    <a href="https://github.com/GustavoBenevenuto/ultra-dev">🔗 ultra-dev</a>
 </h1>
 
 
 <h4 align="center"> 
-	🚧  ultra-dev: Em construção...  🚧
+	🚧  ultra-dev: Under construction...  🚧
 </h4>
 
-A biblioteca ultra-dev é um conjunto de funcionalidades para tarefas comuns do desenvolvimento.
+The ultra-dev library is a set of resources for common development tasks.
 
 
-## Instalação
+## Installation
 
-Use o npm ou o yarn para instalar este pacote:
+Installation ultra-dev
 
-```
-npm i ultra-dev
-
-yarn add ultra-dev
+```bash
+  npm install ultra-dev
 ```
 
-## Funcionalidades
 
-- Geração e validação de Palindromo
-- Geração e validação de CPF
-- Geração e validação de CNPJ
+## Functionalities
+
+**General**
+- [x]  Credit card generator and validator
+- [x]  Palondrome generator and validator
+- [x]  Currency formatter
+- [ ]  Vehicle plate generator and validator
+
+**Brazil**
+- [x]  CPF generator and validator
+- [x]  CNPJ generator and validator
+- [x]  RG generator and validator
+- [ ]  CEP generator and validator 
+- [ ]  CNH generator and validator  
 
 
-## Usar
+## API documentation
 
-**PalindromeService**
-```
-import { PalindromeService } from 'ultra-dev'
-const palindromeService = new PalindromeService()
-const isValid = palindromeService.validate("ana")
-// Result = true
-const palindrome = palindromeService.toGenerate()
-// Result = "laal"
-```
+#### CpfService
 
-**CnpjService**
-```
-import { CnpjService } from 'ultra-dev'
-const cnpjService = new CnpjService()
-const isValid = cnpjService.validate("77.936.772/0605-74")
-// Result = true
-const palindrome = cnpjService.toGenerate()
-// Result = "64.578.092/9682-09"
-```
+| Method   | Parameters       | Return       | Description                           |
+| :---------- | :--------- | :--------- | :---------------------------------- |
+| `toGenerate` | `withMask: boolean = false` | `string` | Return a CPF. If "withMask" is set to true, the CPF will be returned with a mask |
+| `validate` | `value: string` | `boolean` | Returns true if the value is valid |
 
-**CpfService**
-```
-import { CpfService } from 'ultra-dev'
-const cpfService = new CpfService()
-const isValid = cpfService.validate("902.488.343-12")
-// Result = true
-const palindrome = cpfService.toGenerate()
-// Result = "383.691.853-63"
-```
+
+#### CnpjService
+
+| Method   | Parameters       | Return       | Description                           |
+| :---------- | :--------- | :--------- | :---------------------------------- |
+| `toGenerate` | `withMask: boolean = false` | `string` | Return a CNPJ. If "withMask" is set to true, the CNPJ will be returned with a mask |
+| `validate` | `value: string` | `boolean` | Returns true if the value is valid |
+
+
+#### RgService
+
+| Method   | Parameters       | Return       | Description                           |
+| :---------- | :--------- | :--------- | :---------------------------------- |
+| `toGenerate` | `withMask: boolean = false` | `string` | Return a RG. If "withMask" is set to true, the RG will be returned with a mask |
+| `validate` | `value: string` | `boolean` | Returns true if the value is valid |
+
+
+#### PalindromeService
+
+| Method   | Parameters       | Return       | Description                           |
+| :---------- | :--------- | :--------- | :---------------------------------- |
+| `toGenerate` | `withMask: boolean = false` | `string` | Return a Palindrome |
+| `validate` | `value: string` | `boolean` | Returns true if the value is valid |
+
+
+#### CreditCardService
+
+| Method   | Parameters       | Return       | Description                           |
+| :---------- | :--------- | :--------- | :---------------------------------- |
+| `toGenerate` | `brand: TypeCreditCardBrand` | `IRetrunCreditCardBrand` | Returns a credit card according to the brands |
+| `validate` | `value: string` | `boolean` | Returns true if the value is valid |
+
+
+#### CurrencyService
+
+| Method   | Parameters       | Return       | Description                           |
+| :---------- | :--------- | :--------- | :---------------------------------- |
+| `format` | `value: number, currencySymbol: TypeCurrencySymbols = 'R$', decimalCount: number = 2, decimalSeparator: string = ',', thousandsSeparator: string = '.'` | `string` | Returns the number in currency format |
+| `removeFormatting` | `value: string` | `number` | Remove currency formatting |
+
+
+## Authors
+
+- [@Gustavo Benevenuto](https://github.com/GustavoBenevenuto)
+
+
+## Reference
+
+ - [Credit card](https://github.com/avuenja/gerador)
+
