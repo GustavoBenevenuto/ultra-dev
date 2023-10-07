@@ -1,6 +1,5 @@
-import { IBaseGenerationValidation } from "../../interfaces/IBaseGenerationValidation";
-export declare class CnpjService implements IBaseGenerationValidation {
-    readonly weights: number[][];
-    toGenerate(withMask?: boolean): string;
-    validate(value: string): boolean;
+export declare class CnpjService {
+    static readonly weights: number[][];
+    static toGenerate(withMask?: boolean): string;
+    static validate(value: string): boolean;
 }

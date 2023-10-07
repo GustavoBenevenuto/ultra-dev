@@ -15,5 +15,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./general/services/PalindromeService"), exports);
+__exportStar(require("./general/services/CreditCardService"), exports);
 __exportStar(require("./pt-br/services/CpfService"), exports);
 __exportStar(require("./pt-br/services/CnpjService"), exports);
+__exportStar(require("./pt-br/services/RgService"), exports);

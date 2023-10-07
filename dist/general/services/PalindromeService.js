@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PalindromeService = void 0;
 class PalindromeService {
-    toGenerate(withMask = false) {
+    static toGenerate(withMask = false) {
         const alphabet = "abcdefghijklmnopqrstuvwxyz";
         const size = Math.floor(Math.random() * 10) + 5;
         let palindrome = "";
@@ -11,7 +11,7 @@ class PalindromeService {
         }
         return palindrome + palindrome.split("").reverse().join("");
     }
-    validate(value) {
+    static validate(value) {
         const reversedText = value.toLocaleLowerCase().split("").reverse().join("");
         return value === reversedText;
     }

@@ -2,10 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CnpjService = void 0;
 class CnpjService {
-    constructor() {
-        this.weights = [[5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2], [6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2]];
-    }
-    toGenerate(withMask = false) {
+    static toGenerate(withMask = false) {
         let value = Array.from({ length: 12 }, () => Math.floor(Math.random() * 10));
         for (let w of this.weights) {
             let sum = value.reduce((acc, cur, i) => acc + cur * w[i], 0);
@@ -13,7 +10,7 @@ class CnpjService {
         }
         return withMask ? value.join('').replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, "$1.$2.$3/$4-$5") : value.join('');
     }
-    validate(value) {
+    static validate(value) {
         value = value.replace(/\D/g, '');
         if (value.length !== 14 || /^(\d)\1+$/.test(value))
             return false;
@@ -26,3 +23,4 @@ class CnpjService {
     }
 }
 exports.CnpjService = CnpjService;
+CnpjService.weights = [[5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2], [6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2]];
