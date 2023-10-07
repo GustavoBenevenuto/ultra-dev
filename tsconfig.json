@@ -10,7 +10,14 @@
         "forceConsistentCasingInFileNames": true,
         "strict": true,
         "resolveJsonModule": true,
-        "skipLibCheck": true
+        "skipLibCheck": true,
+        "baseUrl": "./src",
+        "paths": {
+            "ultra-dev/*": [
+                "./*"
+            ]
+        },
+        "moduleResolution": "node"
     },
     "include": [
         "src/**/*"
