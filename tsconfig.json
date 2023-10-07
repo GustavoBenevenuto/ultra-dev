@@ -13,11 +13,13 @@
         "skipLibCheck": true,
         "baseUrl": "./src",
         "paths": {
-            "ultra-dev/*": [
-                "./*"
-            ]
+            "ultra-dev/general/*": [
+                "src/general/*"
+            ],
+            "ultra-dev/pt-br/*": [
+                "src/pt-br/*"
+            ],
         },
-        "moduleResolution": "node"
     },
     "include": [
         "src/**/*"

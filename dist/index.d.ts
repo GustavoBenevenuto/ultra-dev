@@ -1,2 +1,2 @@
 export * from './general/services/';
-export * from './pt-br';
+export * from './pt-br/services/CpfService';

@@ -15,4 +15,4 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./general/services/"), exports);
-__exportStar(require("./pt-br"), exports);
+__exportStar(require("./pt-br/services/CpfService"), exports);
