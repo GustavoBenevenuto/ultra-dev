@@ -1,11 +1,11 @@
 {
     "name": "ultra-dev",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "description": "Features for developers",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "scripts": {
-        "build": "tsc",
+        "build": "tsc --declaration",
         "dev": "ts-node-dev --respawn --transpile-only --ignore-watch node_modules --no-notify src/index.ts"
     },
     "keywords": [],
