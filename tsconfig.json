@@ -11,6 +11,7 @@
         "strict": true,
         "resolveJsonModule": true,
         "skipLibCheck": true,
+        "moduleResolution": "node",
         "baseUrl": "./src",
         "paths": {
             "ultra-dev/general/*": [
