@@ -1,7 +1,5 @@
-import { IBaseGenerationValidation } from "../../interfaces/IBaseGenerationValidation";
-
-export class PalindromeService implements IBaseGenerationValidation {
-    toGenerate(withMask: boolean = false): string | Promise<string> {
+export class PalindromeService {
+    static toGenerate(withMask: boolean = false): string | Promise<string> {
         const alphabet = "abcdefghijklmnopqrstuvwxyz";
         const size = Math.floor(Math.random() * 10) + 5;
         let palindrome = "";
@@ -13,7 +11,7 @@ export class PalindromeService implements IBaseGenerationValidation {
         return palindrome + palindrome.split("").reverse().join("");
     }
 
-    validate(value: string): boolean | Promise<boolean> {
+    static validate(value: string): boolean | Promise<boolean> {
         const reversedText = value.toLocaleLowerCase().split("").reverse().join("");
         return value === reversedText;
     }

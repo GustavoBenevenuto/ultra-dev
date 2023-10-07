@@ -1,8 +1,6 @@
-import { IBaseGenerationValidation } from "../../interfaces/IBaseGenerationValidation";
-
 /** Brazilian CPF generation and validation service */
-export class CpfService implements IBaseGenerationValidation {
-    toGenerate(withMask: boolean = false): string {
+export class CpfService {
+    static toGenerate(withMask: boolean = false): string {
         let cpf = '';
         for (let i = 0; i < 9; i++) {
             cpf += Math.floor(Math.random() * 10);
@@ -13,7 +11,7 @@ export class CpfService implements IBaseGenerationValidation {
         return withMask ? cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4') : cpf;
     }
 
-    validate(value: string): boolean {
+    static validate(value: string): boolean {
         value = value.replace(/\D/g, '');
         if (value.length !== 11) return false;
 
@@ -23,7 +21,7 @@ export class CpfService implements IBaseGenerationValidation {
         return checkDigit1 === Number(value[9]) && checkDigit2 === Number(value[10]);
     }
 
-    private calculateCheckDigit(partialCpf: string): number {
+    private static calculateCheckDigit(partialCpf: string): number {
         let sum = 0;
         for (let i = 0; i < partialCpf.length; i++) {
             sum += Number(partialCpf[i]) * (partialCpf.length + 1 - i);

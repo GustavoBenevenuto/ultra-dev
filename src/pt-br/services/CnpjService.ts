@@ -1,9 +1,7 @@
-import { IBaseGenerationValidation } from "../../interfaces/IBaseGenerationValidation";
-
 /** Brazilian CNPJ generation and validation service */
-export class CnpjService implements IBaseGenerationValidation {
-    readonly weights = [[5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2], [6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2]];
-    toGenerate(withMask: boolean = false): string {
+export class CnpjService {
+    static readonly weights = [[5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2], [6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2]];
+    static toGenerate(withMask: boolean = false): string {
         let value = Array.from({ length: 12 }, () => Math.floor(Math.random() * 10));
         for (let w of this.weights) {
             let sum = value.reduce((acc, cur, i) => acc + cur * w[i], 0);
@@ -12,7 +10,7 @@ export class CnpjService implements IBaseGenerationValidation {
         return withMask ? value.join('').replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, "$1.$2.$3/$4-$5") : value.join('');
     }
 
-    validate(value: string): boolean {
+    static validate(value: string): boolean {
         value = value.replace(/\D/g, '');
         if (value.length !== 14 || /^(\d)\1+$/.test(value)) return false;
         for (let j = 0; j < 2; j++) {
